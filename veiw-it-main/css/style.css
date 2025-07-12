@@ -1,0 +1,352 @@
+/* 기본 세팅 */
+*{margin: 0;padding: 0;list-style: none;text-decoration: none;color: inherit;box-sizing: border-box; scrollbar-width: none;}
+:root{
+    --main-bkcolor: #040D17;
+    --link-color: rgb(154, 208, 251);
+    --card-bkcolor: #2f3441;
+}
+
+.mt35{margin-top: 35px;}
+.poa{position: absolute;}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bkcolor: #040D17;
+    --link-color: rgb(154, 208, 251);
+    --card-bkcolor: #eff7fb34;
+    --box-bkcolor: #fbfeff34;
+}
+
+.mt20{margin-top: 20px;}
+.mt30{margin-top: 30px;}
+
+.mt35 {
+    margin-top: 35px;
+}
+
+.poa {
+    position: absolute;
+}
+
+.fb {
+    font-weight: bold;
+}
+
+.b1{top: -170px; right: 80px;}
+.b2{top: 600px; left: 160px;}
+.b3{top: 1800px; left: 230px;}
+.b4{top: 2300px; left: -15px;}
+.b5{bottom: 300px; right: 15px;}
+.b6{bottom: 0px; left: 200px; z-index: -4;}
+.b7{top: 1300px; right: 400px;}
+.fz24 {
+    font-size: 24px;
+}
+
+.fz28 {
+    font-size: 28px;
+}
+
+.fz38 {
+    font-size: 38px;
+}
+
+.fz36 {
+    font-size: 36px;
+}
+
+.fz96 {
+    font-size: 96px;
+}
+
+.bar::before {
+    display: block;
+    content: "";
+    margin: 80px auto;
+    width: 120px;
+    height: 2px;
+    background-color: #fff;
+}
+
+@keyframes bubble {
+    0%{scale: 1;}
+    50%{scale: .3;}
+    100%{scale: 1;}
+}
+
+.bigBlur {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #3da3f6 0%, #737373 100%);
+    filter: blur(150px);
+    animation: bubble 5s infinite ease-in-out;
+}
+
+.smallBlur {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #3da3f6 0%, #737373 100%);
+    filter: blur(100px);
+    animation: bubble 5s infinite ease-in-out;
+}
+
+.b1 {
+    top: -170px;
+    right: 80px;
+}
+
+.b2 {
+    top: 600px;
+    left: 160px;
+}
+
+.b3 {
+    top: 1800px;
+    left: 230px;
+}
+
+.b4 {
+    top: 2300px;
+    left: -15px;
+}
+
+.b5 {
+    bottom: 300px;
+    right: 15px;
+}
+
+.b6 {
+    bottom: 0px;
+    left: 200px;
+    z-index: -4;
+}
+
+.b7{
+    top: 1300px;
+    right: 400px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    background-color: var(--main-bkcolor);
+    z-index: 3;
+}
+
+/* ------------ hedader ------------ */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    /* background-color: gray; */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.29); */
+}
+
+header img{width: 110px; margin-top: 11px; } 
+
+.header-link ul {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.header-link ul li {
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header-link ul li:hover {
+    color: var(--link-color);
+}
+
+.header-link ul li::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--link-color);
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+.header-link ul li:hover::after {
+    width: 100%;
+    z-index: 100;
+}
+
+.header-logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+/* ----------- content1 ------------ */
+
+.content1 {
+    width: 100%;
+    height: 800px;
+}
+
+.content1-in {
+    margin-top: 170px;
+    text-align: center;
+}
+
+.startBtn{display: block; width: 250px; height: 71px; margin: 65px auto; border: 1px solid rgba(255, 255, 255, 0.308); border-radius: 50px; text-align: center; line-height: 71px; background-color: rgb(48, 54, 61); color: #fff; font-size: 24px; transition: .3s; font-weight: bold; cursor: pointer;}
+.startBtn:hover{background-color: #fffbfb60;}
+
+.content1 ul li {
+    padding: 10px;
+    color: #fff;
+}
+
+.startBtn {
+    display: block;
+    width: 250px;
+    height: 71px;
+    margin: 65px auto;
+    border: 1px solid rgb(75, 95, 104);
+    border-radius: 50px;
+    text-align: center;
+    line-height: 71px;
+    background-color: rgb(48, 54, 61);
+    color: #fff;
+    font-size: 24px;
+    transition: .3s;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.startBtn:hover {
+    background-color: #fffbfb46;
+}
+
+/* ----------- content2 ------------ */
+
+.content2 {
+    width: 100%;
+    height: 800px;
+}
+
+.main-txt {
+    margin-bottom: 50px;
+    font-size: 96px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+}
+
+.card-box {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 85%;
+}
+
+.card {
+    position: relative;
+    width: 290px;
+    height: 360px;
+    border-radius: 35px;
+    background-color: var(--card-bkcolor);
+}
+
+.card ul {
+    display: flex;
+    flex-direction: column;
+    height: 150px;
+    margin-left: 10px;
+    padding: 18px;
+    margin-top: 150px;
+}
+
+.card li {
+    color: #fff;
+}
+
+.emoticon {
+    position: absolute;
+    margin: 50px 0px 0px 40px;
+    font-size: 50px;
+}
+
+.card-sub-txt {
+    margin-top: 17px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.card1 {
+  --card-offset-y: 0px;
+}
+.card2 {
+  --card-offset-y: 50px;
+}
+.card3 {
+  --card-offset-y: 100px;
+}
+.card4 {
+  --card-offset-y: 50px;
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(calc(var(--card-offset-y) + 80px));
+  transition: all 0.6s ease-out;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(var(--card-offset-y));
+}
+
+
+/* ----------- content3 ------------ */
+
+.content3 {
+    width: 100%;
+    height: 1400px;
+}
+
+.text-box {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 1050px;
+    color: #fff;
+    text-align: center;
+}
+
+/* ----------- footer ------------ */
+
+footer {
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    z-index: 5;
+}
+
+footer p {
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+    font-size: 19px;
+    font-weight: bold;
+}

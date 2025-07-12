@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인터뷰 연습</title>
+  <script defer src="face-api.min.js"></script>
+  <link rel="stylesheet" href="./css/record.css">
+</head>
+
+<body>
+  <div class="container">
+    <!-- <div class="recordBlur poa b1"></div>
+        <div class="recordBlur poa b2"></div> -->
+
+    <header>
+      <div class="header-logo"><a href="/index.html"><img src="./images/logo.png" alt="logo"></a></div>
+      <nav class="header-link">
+        <ul>
+          <li><a href="./index.html">소개</a></li>
+          <li><a href="./Gemini.html">녹화</a></li>
+          <li><a href="./feedbackList.html">MY 피드백</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <div class="contentBar">
+        <div class="people"><img
+            src="data:image/jpeg;base64,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"
+            alt="people"></div>
+        <div class="textBar" id="question">
+          안녕하세요 면접질문입니다 녹화버튼을 누르고 질문에 대답하는 영상을 ai가 분석하여 피드백을 해드립니다.<br>
+          피드백은 위에 피드백 창에 들어가면 보실 수 있습니다.
+        </div>
+      </div>
+      <div id="videoWrapper" class="camera">
+        <video id="video" autoplay muted playsinline style="width: 710px; height: 500px;"></video>
+        <div class="interviewbox">
+          <div class="interviewStart" onclick="startText()">면접 시작</div>
+          <div class="interviewEnd">다음 질문</div>
+          <a href="./feedBack.html"><div class="nextFeedback" id="feedbackList" onclick="addList()">피드백 받기</div></a>
+      
+        </div>
+        <div id="expressionResult"></div>
+    </section>
+  </div>
+  <script>
+    let questions = [];
+    let current = 0;
+    let exprCounts = {};
+    let detecting = false;
+    let intervalId;
+    let canvas;
+    let sttAnswers = ["", "", "", "", ""];
+    let expressionResults = ["", "", "", "", ""];
+    let currentQuestionIndex = 0;
+    
+
+    const questionEl = document.getElementById('question');
+    const expressionResult = document.getElementById('expressionResult');
+    const video = document.getElementById('video');
+    const videoWrapper = document.getElementById('videoWrapper');
+
+    async function loadQuestions() {
+      try {
+        const res = await fetch('/questions');
+        questions = await res.json();
+      } catch (e) {
+        console.error('질문 로드 실패', e);
+        questions = ['질문 로드에 실패했습니다.'];
+      }
+    }
+
+    async function startInterview() {
+      await loadQuestions();
+      await Promise.all([
+        faceapi.nets.tinyFaceDetector.loadFromUri('/models'),
+        faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
+        faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
+        faceapi.nets.faceExpressionNet.loadFromUri('/models')
+      ]);
+
+      questionEl.innerText = questions[current];
+
+
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        video.srcObject = stream;
+        video.onloadedmetadata = () => {
+          video.play();
+          attachOverlayCanvas();
+          startDetection();
+        };
+      } catch (err) {
+        alert('카메라 접근이 차단되어 있습니다. 설정에서 권한을 허용해주세요.');
+        console.error('카메라 오류:', err);
+      }
+    }
+
+    function attachOverlayCanvas() {
+      canvas = faceapi.createCanvasFromMedia(video);
+      canvas.style.width = video.offsetWidth + 'px';
+      canvas.style.height = video.offsetHeight + 'px';
+      videoWrapper.appendChild(canvas);
+      const displaySize = { width: video.videoWidth, height: video.videoHeight };
+      faceapi.matchDimensions(canvas, displaySize);
+
+      setInterval(async () => {
+        const detections = await faceapi.detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+          .withFaceLandmarks().withFaceExpressions();
+        const resizedDetections = faceapi.resizeResults(detections, displaySize);
+        const ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        faceapi.draw.drawDetections(canvas, resizedDetections);
+        faceapi.draw.drawFaceExpressions(canvas, resizedDetections);
+      }, 100);
+    }
+
+    function handleSubmit() {
+  if (!detecting) return;
+  stopDetection();
+
+  // 여기서는 그냥 감정 추출만 남기고 나머지 제거
+  const maxExpr = getMostFrequentExpression();
+  expressionResult.innerText = '가장 많이 지은 표정: ' + (maxExpr || '인식 불가');
+}
+
+
+
+    function getMostFrequentExpression() {
+      return Object.keys(exprCounts).reduce((a, b) =>
+        exprCounts[a] > exprCounts[b] ? a : b, null
+      );
+      console.log('🔍 감정 카운트:', exprCounts);
+      console.log('⭐ 가장 많이 지은 표정:', maxExpr);
+    }
+
+
+
+
+    function sendOneQuestionToBackend(index) {
+  if (typeof index !== 'number' || isNaN(index)) {
+    console.error("인덱스가 유효하지 않음:", index);
+    return;
+  }
+
+  const data = {
+    index,
+    question: questions[index] || "질문 없음",
+    stt: sttAnswers[index] || "음성 없음",
+    expression: getMostFrequentExpression() || "표정 없음"
+  };
+
+  fetch("http://localhost:4001/save-interview", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  })
+    .then((res) => res.json())
+    .then((res) => {
+      console.log("✅ 데이터 전송 성공:", data);
+    })
+    .catch((err) => console.error("🚨 전송 실패:", err));
+}
+
+function allCompletedAlert() {
+  Swal.fire({
+    text: "피드백 받기 버튼을 눌러주세요.",
+    icon: "success",
+    confirmButtonText: "확인",
+  });
+}
+
+function showAlert() {
+  Swal.fire({
+    text: "면접시작 버튼을 눌러주세요.",
+    icon: "success",
+    confirmButtonText: "확인",
+  });
+}
+
+    function nextQuestion() {
+      current++;
+      currentQuestionIndex++;
+      if (current < questions.length) {
+        resetForNext();
+        showAlert()
+      } else {
+        questionEl.innerText = '모든 질문이 완료되었습니다.';
+        allCompletedAlert()
+      }
+    }
+
+    function resetForNext() {
+      exprCounts = {};
+      expressionResult.innerText = '';
+      questionEl.innerText = questions[current];
+
+      startDetection();
+    }
+
+    function startDetection() {
+      detecting = true;
+      exprCounts = {};
+      intervalId = setInterval(async () => {
+        const detections = await faceapi
+          .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+          .withFaceExpressions();
+        if (detections.length) {
+          const expr = Object.entries(detections[0].expressions)
+            .reduce((a, b) => b[1] > a[1] ? b : a)[0];
+          exprCounts[expr] = (exprCounts[expr] || 0) + 1;
+        }
+      }, 200);
+    }
+
+    function stopDetection() {
+      clearInterval(intervalId);
+    }
+
+    window.addEventListener('DOMContentLoaded', startInterview);
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./js/script.js"></script>
+  <script src="./js/stt.js"></script>
+  <script src="./js/feedbackList.js"></script>
+</body>
+
+</html>

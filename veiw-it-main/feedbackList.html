@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feedback List</title>
+  <link rel="stylesheet" href="./css/feedbackList.css" />
+  <style>
+    /* 모달 스타일 */
+    #feedbackListModal {
+        width: 90%;
+        height: 90%;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      z-index: 100;
+      /* max-width: 600px; */
+      overflow: scroll;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    #feedbackListModalClose {
+
+      margin-top: 20px;
+      padding: 8px 16px;
+      background: #222;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .list-content div:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-logo"><a href="/index.html"><img src="./images/logo.png" alt="logo"></a></div>
+      <nav class="header-link">
+        <ul>
+          <li><a href="./index.html">소개</a></li>
+          <li><a href="./Gemini.html">녹화</a></li>
+          <li><a href="./feedBack.html">MY 피드백</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="content1">
+      <div class="list-text">
+        <h3>LIST</h3>
+      </div>
+
+      <!-- 리스트 영역 -->
+      <div class="list-content"></div>
+
+      <!-- 피드백 모달 -->
+      <div id="feedbackListModal">
+        <p id="feedbackListModalContent"></p>
+        <button id="feedbackListModalClose">닫기</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="./js/feedbackList.js"></script>
+</body>
+</html>

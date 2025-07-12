@@ -1,0 +1,253 @@
+/* 기본 세팅 */
+*{margin: 0;padding: 0;list-style: none;text-decoration: none;color: inherit;box-sizing: border-box; scrollbar-width: none;}
+:root{
+    --main-bkcolor: #040D17;
+    --link-color: rgb(154, 208, 251);
+    --card-bkcolor: #2f3441;
+}
+
+.mt35{margin-top: 35px;}
+.poa{position: absolute;}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-bkcolor: #040D17;
+    --link-color: rgb(154, 208, 251);
+    --card-bkcolor: #eff7fb34;
+    --box-bkcolor: #fbfeff34;
+}
+
+.mt20{margin-top: 20px;}
+.mt30{margin-top: 30px;}
+
+.mt35 {
+    margin-top: 35px;
+}
+
+.poa {
+    position: absolute;
+}
+
+.fb {
+    font-weight: bold;
+}
+
+.b1{top: -170px; right: 80px;}
+.b2{top: 600px; left: 160px;}
+.b3{top: 1800px; left: 230px;}
+.b4{top: 2300px; left: -15px;}
+.b5{bottom: 300px; right: 15px;}
+.b6{bottom: 0px; left: 200px; z-index: -4;}
+.b7{top: 1300px; right: 400px;}
+.fz24 {
+    font-size: 24px;
+}
+
+.fz28 {
+    font-size: 28px;
+}
+
+.fz38 {
+    font-size: 38px;
+}
+
+.fz36 {
+    font-size: 36px;
+}
+
+.fz96 {
+    font-size: 96px;
+}
+
+.bar::before {
+    display: block;
+    content: "";
+    margin: 80px auto;
+    width: 120px;
+    height: 2px;
+    background-color: #fff;
+}
+
+@keyframes bubble {
+    0%{scale: 1;}
+    50%{scale: .3;}
+    100%{scale: 1;}
+}
+
+.bigBlur {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #3da3f6 0%, #737373 100%);
+    filter: blur(150px);
+    animation: bubble 5s infinite ease-in-out;
+}
+
+.smallBlur {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #3da3f6 0%, #737373 100%);
+    filter: blur(100px);
+    animation: bubble 5s infinite ease-in-out;
+}
+
+.b1 {
+    top: -170px;
+    right: 80px;
+}
+
+.b2 {
+    top: 600px;
+    left: 160px;
+}
+
+.b3 {
+    top: 1800px;
+    left: 230px;
+}
+
+.b4 {
+    top: 2300px;
+    left: -15px;
+}
+
+.b5 {
+    bottom: 300px;
+    right: 15px;
+}
+
+.b6 {
+    bottom: 0px;
+    left: 200px;
+    z-index: -4;
+}
+
+.b7{
+    top: 1300px;
+    right: 400px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--main-bkcolor);
+    z-index: 3;
+}
+
+/* ------------ hedader ------------ */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    /* background-color: gray; */
+}
+
+header img{width: 110px; margin-top: 11px;}
+
+.header-link ul {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.header-link ul li {
+    position: relative;
+    color: #fff;
+    font-weight: bold;
+}
+
+.header-link ul li:hover {
+    color: var(--link-color);
+}
+
+.header-link ul li::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--link-color);
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+.header-link ul li:hover::after {
+    width: 100%;
+    z-index: 100;
+}
+
+.header-logo {
+    color: #fff;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+/* ----------- content1 ------------ */
+.content1 {
+    width: 90%;
+    height: 90vh;
+    /* background-color: pink;   */
+    margin: 0 auto;
+    /* display: flex;
+    flex-direction: column;
+    gap: 15px; */ 
+
+}
+.list-text {
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+    /* background-color: aliceblue; */
+}
+.content1 h3 {
+    font-size: 40px;
+    text-align: center;
+    color: white;
+}
+.list-content{ 
+    width: 50%;
+    height: 75vh;
+    /* background-color: #3da3f6; */
+    z-index: 5;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+#modal {
+    width: 80%;
+    height: 90%;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(93, 90, 90);
+    color: black;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+#closeModal{
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}

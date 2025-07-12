@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/feedBack.css">
+    <title>View It-feedBack</title>
+</head>
+<body>
+    <div class="container">
+        <div class="feedBackBlur poa b1"></div>
+        <div class="feedBackBlur poa b2"></div>
+        <!-- <div class="feedBackBlur poa b3"></div> -->
+        <header>
+            <div class="header-logo"><a href="/index.html"><img src="./images/logo.png" alt="logo"></a></div>
+            <nav class="header-link">
+                <ul>
+                  <li><a href="./index.html">소개</a></li>
+                    <li><a href="./Gemini.html">녹화</a></li>
+                    <li><a href="./feedbackList.html">MY 피드백</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section>
+            <div class="contentBar">
+                <div class="people"><img src="./images/robot.jpeg" alt="robot"></div>
+                <div class="textBar" id="feedbackText">
+                    <!-- AI가 사용자가 질문 대답한 것에 대해 그 사람의 시선처리, 감정 등의 그 사람의 행동, 감정 등을 분석한 것을 자세히 서술하고<br>
+                    고쳐야 할 점과 좋은 점, 이외 추가적인 피드백을 해주는 공간 -->
+                    <div class="loader"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <footer>
+            <p>Copyright &copy; 2025. VIEW IT ALL rights reserved</p>
+        </footer> -->
+    </div>
+    <script>
+      setTimeout(() => {
+        async function loadFeedback() {
+          try {
+            const response = await fetch("http://localhost:5002/get_feedback");
+            const text = await response.text();
+      
+            const words = text.match(/\S+\s*/g) || [];
+            const $feedbackText = document.getElementById('feedbackText');
+            $feedbackText.classList.add('load');
+            
+            const feedbackList =  JSON.parse(localStorage.getItem('feedbackList') ?? '[]');
+            feedbackList.push({
+              'content': text,
+              'date': new Date().toLocaleString()
+            })
+            localStorage.setItem('feedbackList',JSON.stringify(feedbackList))
+
+
+            typeWords(words, $feedbackText, 10);
+          } catch (err) {
+            document.getElementById("feedbackText").innerText = "피드백 로딩 실패!";
+          }
+        }
+      
+        function typeWords(words, element, speed) {
+          let i = 0;
+          element.innerText = "";
+          const interval = setInterval(() => {
+            element.innerText += words[i];
+            i++;
+            element.scrollIntoView({ behavior: "smooth", block: "end" });
+            if (i >= words.length) {
+              clearInterval(interval);
+            }
+          }, speed);
+        }
+      
+        loadFeedback();
+      }, 2000);
+      </script>
+      
+
+</body>
+</html>
